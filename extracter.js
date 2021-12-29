@@ -63,7 +63,7 @@ let extractData = function( ) {
     }
 }
 
-fetch('./todos.json') //'https://jsonplaceholder.cypress.io/todos'
+fetch('https://jsonplaceholder.cypress.io/todos')
     .then(function(resp) {
         return resp.json();
     })
@@ -110,6 +110,5 @@ fetch('https://jsonplaceholder.cypress.io/users')
     })
     .then(function(data) {
         allUsersData = data;
-        //extractNames();
         setTimeout(() => extractNames(), 80);
     });

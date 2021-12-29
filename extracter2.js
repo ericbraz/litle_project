@@ -63,16 +63,6 @@ let extractData = function( ) {
     }
 }
 
-/*
-fetch('./todos.json') //'https://jsonplaceholder.cypress.io/todos'
-    .then(function(resp) {
-        return resp.json();
-    })
-    .then(function(data) {
-        allTaskData = data;
-        extractData();
-    });
-*/
 
 let allUsersData = new Object();
 const nameIds = new Array();
@@ -105,7 +95,7 @@ let extractNames = function() {
     }
 }
 
-Promise.all(fetch('./todos.json')
+Promise.all(fetch('https://jsonplaceholder.cypress.io/todos')
                 .then(function(resp) {
                     return resp.json();
                 })
@@ -121,14 +111,3 @@ Promise.all(fetch('./todos.json')
                     allUsersData = data;
                     extractNames();
                 }))
-/*
-fetch('https://jsonplaceholder.cypress.io/users')
-    .then(function(resp) {
-        return resp.json();
-    })
-    .then(function(data) {
-        allUsersData = data;
-        //extractNames();
-        setTimeout(() => extractNames(), 80);
-    });
-*/
